@@ -7,24 +7,42 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
 
+import com.example.aplikasiactivity.util.PreferencesHelper;
+
 public class SplashScreenActivity extends AppCompatActivity {
 
     public static final String TAG = "SplashScreen";
+    PreferencesHelper preferencesHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
 
+        preferencesHelper = PreferencesHelper.getInstance(getApplicationContext());
+
         int splashInterval = 5000;
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                Intent homeIntent = new Intent(SplashScreenActivity.this, HomeActivity.class);
-                homeIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK );
-                startActivity(homeIntent);
-            }
-        }, splashInterval);
+
+        if (preferencesHelper.isLogin() == false) {
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    Intent homeIntent = new Intent(SplashScreenActivity.this, HomeActivity.class);
+                    homeIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK );
+                    startActivity(homeIntent);
+                }
+            }, splashInterval);
+        } else {
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    Intent firstIntent = new Intent(SplashScreenActivity.this, FirstActivity.class);
+                    firstIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK );
+                    startActivity(firstIntent);
+                }
+            }, splashInterval);
+        }
+
     }
 
     @Override

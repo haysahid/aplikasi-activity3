@@ -31,6 +31,7 @@ public class HomeActivity extends AppCompatActivity {
             preferencesHelper.setLogin(true);
             preferencesHelper.setNama(etNama.getText().toString());
             Intent homeIntent = new Intent(HomeActivity.this, FirstActivity.class);
+            homeIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK );
 //            homeIntent.putExtra("nama", etNama.getText().toString());
             startActivity(homeIntent);
         });
@@ -48,5 +49,11 @@ public class HomeActivity extends AppCompatActivity {
     protected void onPause() {
         super.onPause();
         Intent homeIntent = new Intent(HomeActivity.this, FirstActivity.class);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        etNama.setText(preferencesHelper.getnama());
     }
 }
