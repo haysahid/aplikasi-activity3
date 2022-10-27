@@ -39,6 +39,10 @@ public class PreferencesHelper {
     }
 
     public String getnama() {
-        return sharedPreferences.getString("nama", "");
+        return sharedPreferences.getString("nama", "John Doe");
+    }
+
+    public void logout() {
+        sharedPreferences.edit().clear().apply();
     }
 }

@@ -34,8 +34,9 @@ public class FirstActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent logoutIntent = new Intent(FirstActivity.this, HomeActivity.class);
                 logoutIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK );
-                preferencesHelper.setLogin(false);
-                preferencesHelper.setNama("");
+//                preferencesHelper.setLogin(false);
+//                preferencesHelper.setNama("");
+                preferencesHelper.logout();
                 startActivity(logoutIntent);
             }
         });

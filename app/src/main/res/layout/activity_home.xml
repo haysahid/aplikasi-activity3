@@ -35,7 +35,7 @@
             android:layout_height="wrap_content"
             android:minWidth="200dp"
             android:layout_marginTop="10dp"
-            android:text="Change Activity" />
+            android:text="Log In" />
 
         <Button
             android:id="@+id/btnFragment"

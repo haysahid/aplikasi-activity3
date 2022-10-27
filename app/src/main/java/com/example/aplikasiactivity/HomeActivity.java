@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.aplikasiactivity.util.PreferencesHelper;
 
@@ -29,7 +30,12 @@ public class HomeActivity extends AppCompatActivity {
 
         btnActivity.setOnClickListener(view -> {
             preferencesHelper.setLogin(true);
+            if (etNama.getText().toString().matches("")) {
+                Toast.makeText(this, "Nama tidak boleh kosong", Toast.LENGTH_SHORT).show();
+                return;
+            }
             preferencesHelper.setNama(etNama.getText().toString());
+
             Intent homeIntent = new Intent(HomeActivity.this, FirstActivity.class);
             homeIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK );
 //            homeIntent.putExtra("nama", etNama.getText().toString());
@@ -49,11 +55,5 @@ public class HomeActivity extends AppCompatActivity {
     protected void onPause() {
         super.onPause();
         Intent homeIntent = new Intent(HomeActivity.this, FirstActivity.class);
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        etNama.setText(preferencesHelper.getnama());
     }
 }
