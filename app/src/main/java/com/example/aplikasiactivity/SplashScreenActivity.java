@@ -23,26 +23,28 @@ public class SplashScreenActivity extends AppCompatActivity {
 
         int splashInterval = 5000;
 
-        if (preferencesHelper.isLogin() == false) {
-            new Handler().postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    Intent homeIntent = new Intent(SplashScreenActivity.this, HomeActivity.class);
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                if (!preferencesHelper.isLogin()) {
+                    Intent homeIntent = new Intent(SplashScreenActivity.this, RegistrasiActivity.class);
+                    homeIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK );
+                    startActivity(homeIntent);
+                } else {
+                    Intent homeIntent = new Intent(SplashScreenActivity.this, FirstActivity.class);
                     homeIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK );
                     startActivity(homeIntent);
                 }
-            }, splashInterval);
-        } else {
-            new Handler().postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    Intent firstIntent = new Intent(SplashScreenActivity.this, FirstActivity.class);
-                    firstIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK );
-                    startActivity(firstIntent);
-                }
-            }, splashInterval);
-        }
 
+//                Intent homeIntent = new Intent(SplashScreenActivity.this, HomeActivity.class);
+//                Intent firstIntent = new Intent(SplashScreenActivity.this, FirstActivity.class);
+//
+//                homeIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK );
+//                firstIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK );
+//
+//                startActivity(preferencesHelper.isLogin() ? homeIntent : firstIntent);
+            }
+        }, splashInterval);
     }
 
     @Override

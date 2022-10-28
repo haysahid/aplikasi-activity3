@@ -42,6 +42,16 @@ public class PreferencesHelper {
         return sharedPreferences.getString("nama", "");
     }
 
+    public void setUser(String username, String password) {
+        sharedPreferences.edit().putString("username", username);
+        sharedPreferences.edit().putString("password", password);
+    }
+
+    public String[] getUser() {
+        String user[] = {sharedPreferences.getString("username", ""), sharedPreferences.getString("password", "")};
+        return user;
+    }
+
     public void logout() {
         sharedPreferences.edit().clear().apply();
     }
