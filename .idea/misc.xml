@@ -3,14 +3,17 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/21.02.0669/Aplikasi Activity/app/src/main/res/layout/activity_add_user.xml" value="0.18802083333333333" />
         <entry key="..\:/21.02.0669/Aplikasi Activity/app/src/main/res/layout/activity_first.xml" value="0.2" />
         <entry key="..\:/21.02.0669/Aplikasi Activity/app/src/main/res/layout/activity_home.xml" value="0.2" />
         <entry key="..\:/21.02.0669/Aplikasi Activity/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/21.02.0669/Aplikasi Activity/app/src/main/res/layout/activity_registrasi.xml" value="0.22" />
         <entry key="..\:/21.02.0669/Aplikasi Activity/app/src/main/res/layout/activity_second.xml" value="0.36666666666666664" />
         <entry key="..\:/21.02.0669/Aplikasi Activity/app/src/main/res/layout/activity_splash_screen.xml" value="0.2" />
+        <entry key="..\:/21.02.0669/Aplikasi Activity/app/src/main/res/layout/activity_user.xml" value="0.33" />
         <entry key="..\:/21.02.0669/Aplikasi Activity/app/src/main/res/layout/fragment_first.xml" value="0.24547101449275363" />
         <entry key="..\:/21.02.0669/Aplikasi Activity/app/src/main/res/layout/fragment_second.xml" value="0.23278985507246377" />
+        <entry key="..\:/21.02.0669/Aplikasi Activity/app/src/main/res/layout/item_mahasiswa.xml" value="0.33" />
       </map>
     </option>
   </component>
