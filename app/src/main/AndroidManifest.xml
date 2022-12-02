@@ -4,6 +4,7 @@
     package="com.example.aplikasiactivity">
 
     <application
+        android:name=".room.AppApplication"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -14,10 +15,10 @@
         android:theme="@style/Theme.AplikasiActivity"
         tools:targetApi="31">
         <activity
-            android:name=".AddUserActivity"
+            android:name=".activity.AddUserActivity"
             android:exported="false" />
         <activity
-            android:name=".UserActivity"
+            android:name=".activity.UserActivity"
             android:exported="false" />
         <activity
             android:name=".RegistrasiActivity"

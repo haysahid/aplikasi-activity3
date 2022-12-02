@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
 
+import com.example.aplikasiactivity.activity.AddUserActivity;
 import com.example.aplikasiactivity.util.PreferencesHelper;
 
 public class SplashScreenActivity extends AppCompatActivity {
@@ -27,7 +28,7 @@ public class SplashScreenActivity extends AppCompatActivity {
             @Override
             public void run() {
                 if (!preferencesHelper.isLogin()) {
-                    Intent homeIntent = new Intent(SplashScreenActivity.this, RegistrasiActivity.class);
+                    Intent homeIntent = new Intent(SplashScreenActivity.this, AddUserActivity.class);
                     homeIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK );
                     startActivity(homeIntent);
                 } else {

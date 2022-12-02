@@ -1,4 +1,4 @@
-package com.example.aplikasiactivity;
+package com.example.aplikasiactivity.room;
 
 import android.app.Application;
 
