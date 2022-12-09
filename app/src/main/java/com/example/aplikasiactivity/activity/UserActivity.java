@@ -2,6 +2,7 @@ package com.example.aplikasiactivity.activity;
 
 import static com.example.aplikasiactivity.room.AppApplication.db;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -13,6 +14,7 @@ import android.util.Log;
 import com.example.aplikasiactivity.DialogBox;
 import com.example.aplikasiactivity.R;
 import com.example.aplikasiactivity.room.AppDatabase;
+import com.example.aplikasiactivity.room.ItemClickListener;
 import com.example.aplikasiactivity.room.Mahasiswa;
 
 import java.util.ArrayList;
@@ -20,6 +22,7 @@ import java.util.List;
 
 public class UserActivity extends AppCompatActivity {
 
+    ItemClickListener itemClickListener;
     RecyclerView recyclerView;
     RecyclerviewUserAdapter recyclerAdapter;
     List<Mahasiswa> listMahasiswas = new ArrayList<>();
@@ -63,6 +66,19 @@ public class UserActivity extends AppCompatActivity {
         recyclerView.setHasFixedSize(true);
         LinearLayoutManager llm = new LinearLayoutManager(this);
         llm.setOrientation(LinearLayoutManager.VERTICAL);
+
+        itemClickListener = new ItemClickListener() {
+            @Override
+            public void onClick(Object model) {
+
+            }
+
+            @Override
+            public boolean onLongClick(@Nullable Object model) {
+                return true;
+            }
+        };
+
         recyclerView.setLayoutManager(llm);
         recyclerAdapter = new RecyclerviewUserAdapter(this, listMahasiswas);
     }

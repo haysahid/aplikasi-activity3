@@ -25,14 +25,16 @@ public class EditUserActivity extends AppCompatActivity {
     private EditText etAlamat;
     private Button saveData;
     Mahasiswa mahasiswa;
-    PreferencesHelper preferencesHelper;
+//    PreferencesHelper preferencesHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_user);
 
-        preferencesHelper = PreferencesHelper.getInstance(getApplicationContext());
+//        preferencesHelper = PreferencesHelper.getInstance(getApplicationContext());
+
+        int indeks = getIntent().getIntExtra("indeks", 0);
 
         mahasiswa = new Mahasiswa();
 
@@ -44,7 +46,7 @@ public class EditUserActivity extends AppCompatActivity {
 
         db = Room.databaseBuilder(getApplicationContext(), AppDatabase.class, "mahasiswa")
                 .allowMainThreadQueries().build();
-        mahasiswa = db.userDao().getAll().get(preferencesHelper.getIndeks());
+        mahasiswa = db.userDao().getAll().get(indeks);
 
         int id = mahasiswa.getId();
         etNama.setText(mahasiswa.getNama());
