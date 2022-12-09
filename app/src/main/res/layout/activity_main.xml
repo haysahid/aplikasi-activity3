@@ -19,11 +19,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:text="Sign In"
-            android:textSize="24sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:textSize="24sp" />
 
         <EditText
             android:id="@+id/editTextUsername"
@@ -31,12 +27,9 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="20dp"
-            android:ems="10"
             android:hint="Masukkan Username"
             android:inputType="textPersonName"
-            android:text=""
-            tools:layout_editor_absoluteX="41dp"
-            tools:layout_editor_absoluteY="171dp" />
+            android:text="" />
 
         <EditText
             android:id="@+id/editTextPassword"
@@ -44,12 +37,9 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="10dp"
-            android:ems="10"
             android:hint="Masukkan Password"
             android:inputType="textPassword"
-            android:text=""
-            tools:layout_editor_absoluteX="41dp"
-            tools:layout_editor_absoluteY="171dp" />
+            android:text="" />
 
         <Button
             android:id="@+id/button"

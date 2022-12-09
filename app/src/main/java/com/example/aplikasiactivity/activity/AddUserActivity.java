@@ -47,10 +47,10 @@ public class AddUserActivity extends AppCompatActivity {
                     mahasiswa.setKejuruan(etKejuruan.getText().toString());
                     mahasiswa.setAlamat(etAlamat.getText().toString());
 
-                    Log.d("cek", "onClick: " + etNama.getText().toString());
                     // Insert data in database
                     db.userDao().insertAll(mahasiswa);
-                    startActivity(new Intent(AddUserActivity.this, UserActivity.class));
+//                    startActivity(new Intent(AddUserActivity.this, UserActivity.class));
+                    finish();
                 } else {
                     Toast.makeText(getApplicationContext(), "Mohon masukkan dengan benar",
                             Toast.LENGTH_SHORT).show();

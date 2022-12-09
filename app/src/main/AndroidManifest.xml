@@ -15,6 +15,13 @@
         android:theme="@style/Theme.AplikasiActivity"
         tools:targetApi="31">
         <activity
+            android:name=".activity.EditUserActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".activity.AddUserActivity"
             android:exported="false" />
         <activity

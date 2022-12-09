@@ -10,6 +10,7 @@ import androidx.room.Room;
 import android.os.Bundle;
 import android.util.Log;
 
+import com.example.aplikasiactivity.DialogBox;
 import com.example.aplikasiactivity.R;
 import com.example.aplikasiactivity.room.AppDatabase;
 import com.example.aplikasiactivity.room.Mahasiswa;
@@ -22,12 +23,22 @@ public class UserActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     RecyclerviewUserAdapter recyclerAdapter;
     List<Mahasiswa> listMahasiswas = new ArrayList<>();
+    private Mahasiswa mahasiswa;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user);
 
+        recyclerView = findViewById(R.id.recycleView);
+        fetchDataFromRoom();
+        initRecyclerView();
+        setAdapter();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
         recyclerView = findViewById(R.id.recycleView);
         fetchDataFromRoom();
         initRecyclerView();

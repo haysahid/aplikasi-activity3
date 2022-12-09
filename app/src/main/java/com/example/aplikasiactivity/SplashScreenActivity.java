@@ -22,13 +22,13 @@ public class SplashScreenActivity extends AppCompatActivity {
 
         preferencesHelper = PreferencesHelper.getInstance(getApplicationContext());
 
-        int splashInterval = 5000;
+        int splashInterval = 3000;
 
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
                 if (!preferencesHelper.isLogin()) {
-                    Intent homeIntent = new Intent(SplashScreenActivity.this, AddUserActivity.class);
+                    Intent homeIntent = new Intent(SplashScreenActivity.this, HomeActivity.class);
                     homeIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK );
                     startActivity(homeIntent);
                 } else {

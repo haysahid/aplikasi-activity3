@@ -43,8 +43,8 @@ public class PreferencesHelper {
     }
 
     public void setUser(String username, String password) {
-        sharedPreferences.edit().putString("username", username);
-        sharedPreferences.edit().putString("password", password);
+        sharedPreferences.edit().putString("username", username).apply();
+        sharedPreferences.edit().putString("password", password).apply();
     }
 
     public String[] getUser() {
@@ -55,4 +55,11 @@ public class PreferencesHelper {
     public void logout() {
         sharedPreferences.edit().clear().apply();
     }
+
+    // Indeks recyclerview mahasiswa
+    public void setIndeks(Integer id) {
+        sharedPreferences.edit().putInt("id", id).apply();
+    }
+
+    public int getIndeks() {return sharedPreferences.getInt("id", 0);}
 }
