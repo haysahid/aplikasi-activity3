@@ -15,7 +15,7 @@ import com.example.aplikasiactivity.util.PreferencesHelper;
 public class FirstActivity extends AppCompatActivity {
 
     PreferencesHelper preferencesHelper;
-    Button btnAddUser, btnShowUsers, btnLogout;
+    Button btnAddUser, btnShowUsers, btnLogout, btnTimer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,11 +27,19 @@ public class FirstActivity extends AppCompatActivity {
         btnAddUser = findViewById(R.id.btnAddUser);
         btnShowUsers = findViewById(R.id.btnShowUsers);
         btnLogout = findViewById(R.id.btnLogout);
+        btnTimer = findViewById(R.id.btnTimer);
 
 //        Intent intent = getIntent();
 //        String nama = intent.getStringExtra("nama");
 
         txtFirst.setText(preferencesHelper.getnama());
+
+        btnTimer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(FirstActivity.this, TimerActivity.class));
+            }
+        });
 
         btnAddUser.setOnClickListener(new View.OnClickListener() {
             @Override
